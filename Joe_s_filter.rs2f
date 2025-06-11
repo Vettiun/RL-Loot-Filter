@@ -5,7 +5,7 @@ name: header
 
 /* Built on: Wed Jun  4 04:10:45 UTC 2025 */
 /* Commit: 961c4de */
-meta { name = "Joe's filter"; description = "Offers an original color scheme with extensive support for category-based styling/filtering."; }
+meta { name = "Oxymyzer's filter"; description = "Modified Joe's filter - Offers an original color scheme with extensive support for category-based styling/filtering."; }
 
 
 /*@ define:module:default_styling
