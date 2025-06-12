@@ -9,6 +9,7 @@ meta { name = "Oxymyzer's filter"; description = "Modified Joe's filter - Offers
 
 
 
+
 /*@ define:module:default_styling
 ---
 name: Default Styling
@@ -120,6 +121,7 @@ apply (name:VAR_GLOBAL_SHOW_ICONS_ITEMLIST) {
 }
 
 
+
 /*@ define:module:sorting
 ---
 name: Sorting
@@ -153,6 +155,7 @@ type: stringlist
 label: Items to always show first
 */
 #define VAR_MENU_SORT_ITEMS_FIRST []
+
 
 
 /*@ define:module:filtering
@@ -3929,6 +3932,7 @@ apply ((name:CONST_DRAGON_ONE_HANDED_MELEE_WEAPONS || name:CONST_DRAGON_TWO_HAND
 }
 
 
+
 /*@ define:module:area_based_filtering
 ---
 name: Area-Based Filtering
@@ -5792,6 +5796,7 @@ apply (area:CONST_LAST_MAN_STANDING_WILD_VARROCK_AREA && name:VAR_LAST_MAN_STAND
 }
 
 
+
 /*@ define:module:item_tiers
 ---
 name: Item tiers
@@ -5922,33 +5927,34 @@ type: boolean
 label: Dont let tier 1 items get filtered out or restyled in future modules
 group: Power User
 */
-#define VAR_VALUES_TIER_1_TERMINATE true
+#define VAR_VALUES_TIER_1_TERMINATE false
 
 /*@ define:input:item_tiers
 type: boolean
 label: Dont let tier 2 items get filtered out or restyled in future modules
 group: Power User
 */
-#define VAR_VALUES_TIER_2_TERMINATE true
+#define VAR_VALUES_TIER_2_TERMINATE false
 
 /*@ define:input:item_tiers
 type: boolean
 label: Dont let tier 3 items get filtered out or restyled in future modules
 group: Power User
 */
-#define VAR_VALUES_TIER_3_TERMINATE true
+#define VAR_VALUES_TIER_3_TERMINATE false
 
 /*@ define:input:item_tiers
 type: boolean
 label: Dont let tier 4 items get filtered out or restyled in future modules
 group: Power User
 */
-#define VAR_VALUES_TIER_4_TERMINATE true
+#define VAR_VALUES_TIER_4_TERMINATE false
 
 rule (VAR_VALUES_TIER_1_TERMINATE && ((value:>=VAR_VALUES_TIER_1_VALUE && value:<VAR_VALUES_TIER_2_VALUE) || name:VAR_VALUES_TIER_1_SHOW)) {}
 rule (VAR_VALUES_TIER_2_TERMINATE && ((value:>=VAR_VALUES_TIER_2_VALUE && value:<VAR_VALUES_TIER_3_VALUE) || name:VAR_VALUES_TIER_2_SHOW)) {}
 rule (VAR_VALUES_TIER_3_TERMINATE && ((value:>=VAR_VALUES_TIER_3_VALUE && value:<VAR_VALUES_TIER_4_VALUE) || name:VAR_VALUES_TIER_3_SHOW)) {}
 rule (VAR_VALUES_TIER_4_TERMINATE && ((value:>=VAR_VALUES_TIER_4_VALUE) || name:VAR_VALUES_TIER_4_SHOW)) {}
+
 
 
 
@@ -6005,6 +6011,7 @@ group: Power User
 rule (VAR_UNIQUES_TERMINATE && name:VAR_UNIQUES_LIST) {}
 
 
+
 /*@ define:module:alchs
 ---
 name: Alchs
@@ -6054,6 +6061,7 @@ group: Power User
 #define VAR_ALCHS_TERMINATE true
 
 rule (VAR_ALCHS_TERMINATE && name:VAR_ALCHS_ITEM_LIST) {}
+
 
 
 /*@ define:module:item_category_styles
@@ -7301,6 +7309,7 @@ exampleItem: Gilded platelegs
 apply (name:CONST_RUNE_GILDED) {
     VAR_RUNE_GILDED_CUSTOMSTYLE 
 }
+
 
 
 /*@ define:module:individual_item_styles
@@ -11879,6 +11888,7 @@ apply (area:CONST_GAUNTLET_AREA && name:"* legs *") {
 
 
 
+
 /*@ define:module:rare_drop_table
 ---
 name: Rare drop table
@@ -12231,6 +12241,7 @@ apply (name:"Dragon spear" && quantity:==1 && name:VAR_RDT_HIDE) {
 
 
 
+
 /*@ define:module:utilities
 ---
 name: Utilities
@@ -12286,6 +12297,7 @@ apply (VAR_LAST_MAN_STANDING_SOUND_AND_NOTIFICATIONS_DISABLE && (area:CONST_LAST
     sound = 2411; // sound name: silence
     notify = false;
 }
+
 
 
 /*@ define:module:final
@@ -13072,6 +13084,7 @@ apply (VAR_SORTING_MENU_SORT_UNTRADEABLE_FIRST && tradeable:false && value:>=200
 apply (name:VAR_MENU_SORT_ITEMS_FIRST) {
     menuSort = 300;
 }
+
 
 
 /*@ define:module:constants
